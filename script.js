@@ -69,6 +69,6 @@ function scheduleTask() {
   document.getElementById("present-member").textContent = presentMember;
   document.getElementById("tomorrow-member").textContent = tomorrowMember;
 }
-
+console.log(counter);
 setInterval(scheduleTask, 1000);
 scheduleTask();
