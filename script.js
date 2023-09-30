@@ -1,5 +1,7 @@
+const members = ["আশরাফুল", "নাফিস", "নাহিন", "সাবিত", "রিফাত"];
+var presentMember = members[0];
+var counter = 1;
 function scheduleTask() {
-  const members = ["আশরাফুল", "নাফিস", "নাহিন", "সাবিত", "রিফাত"];
   const day = new Date();
   var today = {
     weekday: "long",
@@ -8,6 +10,7 @@ function scheduleTask() {
     day: "numeric",
   };
   var todayName = day.toLocaleDateString("bn-BN", today);
+  const currentDay = day.getDay();
   const hours = day.getHours();
   const minutes = day.getMinutes();
   const seconds = day.getSeconds();
@@ -18,10 +21,7 @@ function scheduleTask() {
     ${bengaliDigits[Math.floor(minutes / 10)]}${bengaliDigits[minutes % 10]}:
     ${bengaliDigits[Math.floor(seconds / 10)]}${bengaliDigits[seconds % 10]}
 `;
-  if ((currentHour) => 0 && currentMinute >= 1) {
-    var presentMember;
-    let counter = 0;
-    const currentDay = day.getDay();
+  if (hours === 0 && minutes === 0 && seconds === 1) {
     if (counter > 4) {
       counter = 0;
     }
@@ -40,9 +40,11 @@ function scheduleTask() {
         break;
       case 4:
         presentMember = members[counter];
+        counter++;
         break;
       case 5:
         presentMember = members[counter];
+        counter++;
         break;
       case 6:
         presentMember = members[0];
@@ -50,24 +52,22 @@ function scheduleTask() {
       default:
         presentMember = NaN;
     }
-
-    var yesterdayIndex =
-      members.indexOf(presentMember) == 0
-        ? 4
-        : members.indexOf(presentMember) - 1;
-    var tomorrowIndex =
-      members.indexOf(presentMember) == 4
-        ? 0
-        : members.indexOf(presentMember) + 1;
-    var pastMember = members[yesterdayIndex];
-    var tomorrowMember = members[tomorrowIndex];
-    document.getElementById("today").textContent = todayName;
-    document.getElementById("time").textContent = formattedTime;
-    document.getElementById("past-member").textContent = pastMember;
-    document.getElementById("present-member").textContent = presentMember;
-    document.getElementById("tomorrow-member").textContent = tomorrowMember;
-    counter++;
   }
+  var yesterdayIndex =
+    members.indexOf(presentMember) == 0
+      ? 4
+      : members.indexOf(presentMember) - 1;
+  var tomorrowIndex =
+    members.indexOf(presentMember) == 4
+      ? 0
+      : members.indexOf(presentMember) + 1;
+  var pastMember = members[yesterdayIndex];
+  var tomorrowMember = members[tomorrowIndex];
+  document.getElementById("today").textContent = todayName;
+  document.getElementById("time").textContent = formattedTime;
+  document.getElementById("past-member").textContent = pastMember;
+  document.getElementById("present-member").textContent = presentMember;
+  document.getElementById("tomorrow-member").textContent = tomorrowMember;
 }
 
 setInterval(scheduleTask, 1000);
