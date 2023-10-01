@@ -1,9 +1,9 @@
 const members = ["আশরাফুল", "নাফিস", "নাহিন", "সাবিত", "রিফাত"];
-var presentMember = members[0];
+var presentMember=members[2];
 var counter = 1;
-function scheduleTask() {
+function updateTime() {
   const day = new Date();
-  var today = {
+  const today = {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -21,22 +21,22 @@ function scheduleTask() {
     ${bengaliDigits[Math.floor(minutes / 10)]}${bengaliDigits[minutes % 10]}:
     ${bengaliDigits[Math.floor(seconds / 10)]}${bengaliDigits[seconds % 10]}
 `;
-  if (hours === 0 && minutes === 0 && seconds === 1) {
-    if (counter > 4) {
-      counter = 0;
-    }
+  if (counter > 4) {
+    counter = 0;
+  }
+  if (hours == 0 && minutes == 0 && seconds == 0) {
     switch (currentDay) {
       case 0:
-        presentMember = members[2];
+        presentMember = members[1];
         break;
       case 1:
-        presentMember = members[3];
+        presentMember = members[2];
         break;
       case 2:
-        presentMember = members[4];
+        presentMember = members[3];
         break;
       case 3:
-        presentMember = members[0];
+        presentMember = members[4];
         break;
       case 4:
         presentMember = members[counter];
@@ -68,7 +68,7 @@ function scheduleTask() {
   document.getElementById("past-member").textContent = pastMember;
   document.getElementById("present-member").textContent = presentMember;
   document.getElementById("tomorrow-member").textContent = tomorrowMember;
+  console.log(counter);
 }
-console.log(counter);
-setInterval(scheduleTask, 1000);
-scheduleTask();
+
+setInterval(updateTime, 1000);
