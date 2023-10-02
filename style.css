@@ -63,7 +63,7 @@ p {
   background: #fff;
 }
 
-#routine-table tr:hover {
+#routine-table td:hover {
   background: #ccc;
   cursor: pointer;
 }
