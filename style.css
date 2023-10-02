@@ -4,7 +4,10 @@ body {
   font-family: "Press Start 2P", cursive;
   font-family: "Tiro Bangla", serif;
   text-align: center;
+  background-color: #FBFBFD;
 }
+
+
 
 .container {
   max-width: 600px;
@@ -33,4 +36,182 @@ p {
 }
 .grey {
   color: grey;
+}
+
+#routine-table {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#routine-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+#routine-table th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #007bff;
+  color: #fff;
+}
+
+#routine-table tr:nth-child(odd) {
+  background: #f4f4f4;
+}
+
+#routine-table tr:nth-child(even) {
+  background: #fff;
+}
+
+#routine-table tr:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+#time {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#present-member {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+#present-member:hover {
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1.5);
+  cursor: cell;
+}
+
+/* Add a fade-in effect when the page loads */
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animate the background color of the header when the user scrolls down */
+header {
+  background-color: #007bff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+header.scrolled {
+  background-color: #0056b3;
+}
+
+
+
+@-webkit-keyframes changeColor {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@-moz-keyframes changeColor {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@-o-keyframes changeColor {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+@keyframes changeColor {
+    0%{background-position:0% 22%}
+    50%{background-position:100% 79%}
+    100%{background-position:0% 22%}
+}
+
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.footer {
+  margin-top: 30px;
+}
+#footer-txt {
+  color: grey;
+  font-size: 12px;
+  font-weight: 100;
+  text-decoration: none;
+}
+#footer-txt a {
+  color: #007bff;
+  font-size: 12px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+#present-member {
+  transition: transform 0.5s ease-in-out;
+}
+
+#present-member:hover {
+  transform: scale(1.5);
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  #routine-table {
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  #routine-table {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  #routine-table {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  #routine-table {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  #routine-table {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  #routine-table {
+    width: 800px;
+    margin: 0 auto;
+  }
 }
