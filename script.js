@@ -24,7 +24,6 @@ function updateTime() {
   if (counter > 4) {
     counter = 0;
   }
-  if (hours == 0 && minutes == 0 && seconds == 0) {
     switch (currentDay) {
       case 0:
         presentMember = members[1];
@@ -52,7 +51,6 @@ function updateTime() {
       default:
         presentMember = NaN;
     }
-  }
   var yesterdayIndex =
     members.indexOf(presentMember) == 0
       ? 4
